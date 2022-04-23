@@ -4,15 +4,24 @@ module.exports = {
     node: true,
     es2021: true,
   },
-  extends: 'eslint:recommended',
+  extends: ['standard'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    requireConfigFile: false,
   },
   rules: {
-    indent: ['error', 2],
-    quotes: ['error', 'single'],
+    'comma-dangle': [
+      'error',
+      {
+        functions: 'never',
+        arrays: 'always-multiline',
+        objects: 'always-multiline',
+      },
+    ],
+    'prefer-const': 'off',
     semi: ['error', 'always'],
+    'space-before-function-paren': ['error', { named: 'never' }],
   },
 };
