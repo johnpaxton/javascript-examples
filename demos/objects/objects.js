@@ -9,25 +9,25 @@ const person = {
   getState() {
     return this.state;
   },
-  getCity: function() {
+  getCity: function () {
     return this.city;
   },
-  add: ( x, y ) => x + y,
+  add: (x, y) => x + y,
 };
 
 // Iteration possibilities
-const keys = Object.keys( person );
-const values = Object.values( person );
+const keys = Object.keys(person);
+const values = Object.values(person);
 
 // entries [[key1, value1], [key2, value2]]
-const entries = Object.entries( person );
+const entries = Object.entries(person);
 
-Object.keys( person ).forEach( ( key ) => {
-  console.log( `${key}: ${person[key]}` );
-} );
+Object.keys(person).forEach((key) => {
+  console.log(`${key}: ${person[key]}`);
+});
 
 // Object.keys() equivalent
-for ( const key in person ) {
+for (const key in person) {
   // Whatever
 }
 
@@ -38,16 +38,16 @@ for ( const key in person ) {
 // eslint-disable-next-line max-len
 // More here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description
 
-Object.keys( person )
-  .filter( ( key ) => typeof person[key] === 'function' )
-  .forEach( ( key ) => {
-    Object.defineProperty( person, key, { enumerable: false } );
-  } );
+Object.keys(person)
+  .filter((key) => typeof person[key] === 'function')
+  .forEach((key) => {
+    Object.defineProperty(person, key, { enumerable: false });
+  });
 
-Object.defineProperty( person, 'someMethod', {
+Object.defineProperty(person, 'someMethod', {
   enumerable: false,
-  value: () => console.log( 'Some method' ),
-} );
+  value: () => console.log('Some method'),
+});
 
 // Destructuring
 const { firstName, lastName } = person;
@@ -58,7 +58,7 @@ const { firstName, lastName } = person;
 const state = {
   aString: '',
   aNumber: 0,
-  aFunction: function() {},
+  aFunction: function () {},
   anArrowFunction: () => {},
   anotherFunction() {},
   anotherObject: {

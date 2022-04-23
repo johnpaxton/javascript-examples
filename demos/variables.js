@@ -20,7 +20,7 @@ const c = 30;
 {
   let d = 'some value d';
   const e = 'some value e';
-  console.log( 'd:', d, 'e:', e );
+  console.log('d:', d, 'e:', e);
 }
 
 // This will fail
@@ -32,11 +32,11 @@ const c = 30;
 }
 
 // This will ... not fail?
-console.log( 'f:', f );
+console.log('f:', f);
 
 function varScope() {
   var g = 'some value g';
-  console.log( 'In function:', g );
+  console.log('In function:', g);
 }
 
 // This will fail ...?
@@ -51,29 +51,29 @@ const aDoubleQuotedString = "double-quoted string";
 
 const templateString = `Value of aString: ${aString}`;
 const todayTemplate = `Today is ${Date.now()}`;
-const todayTemplateAsFunction = function() {
+const todayTemplateAsFunction = function () {
   return 'Today is ' + Date.now();
 };
 const multiLineTemplate = `
 hello.
 how are you?
 `;
-console.log( todayTemplate );
+console.log(todayTemplate);
 
 const aNumber = 10;
 const aLongNumber = 10_000_000_000_000_000_000;
 const aBoolean = true;
-const anArray = [ 1, 2, 3, 4 ];
-anArray.push( 5, 6, 7 );
+const anArray = [1, 2, 3, 4];
+anArray.push(5, 6, 7);
 
 const multiDimensionalArray = [
-  [ 1, 2 ],
-  [ 3, 4 ],
-  [ 5, 6 ],
+  [1, 2],
+  [3, 4],
+  [5, 6],
 ];
-multiDimensionalArray.push( [ 7, 8 ] );
+multiDimensionalArray.push([7, 8]);
 
-console.log( multiDimensionalArray[0][1] );
+console.log(multiDimensionalArray[0][1]);
 
 const anObject = {
   firstName: 'John',
@@ -82,14 +82,14 @@ const anObject = {
   state: 'NJ',
 };
 
-console.log( anObject.firstName );
-console.log( anObject['zip code'] );
+console.log(anObject.firstName);
+console.log(anObject['zip code']);
 
 const data = {
   firstNames: [],
 };
 
-data.firstNames.push( 'Arpan', 'John', 'Anita' );
+data.firstNames.push('Arpan', 'John', 'Anita');
 
 const PI = 3.14;
 
@@ -98,19 +98,19 @@ const myConstants = {
   gravity: 9.8,
 };
 
-Object.freeze( myConstants );
-console.log( Math.PI );
+Object.freeze(myConstants);
+console.log(Math.PI);
 
-const aFunction = function( x, y ) {
+const aFunction = function (x, y) {
   return x + y;
 };
 
-aFunction( 1, 2 );
+aFunction(1, 2);
 
 const aRegularExpression = /[0-9]+/;
 
 // eslint-disable-next-line prefer-regex-literals
-const anotherRegExp = new RegExp( '[0-9]+' );
+const anotherRegExp = new RegExp('[0-9]+');
 
 const today = new Date();
 

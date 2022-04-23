@@ -70,9 +70,7 @@ class PeopleManager {
 let dao = {
   fetchPerson() {
     console.log('fetchPerson');
-    fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (
-      response
-    ) {
+    fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
       if (response.ok) {
         response.json().then(function (person) {
           console.log(`Fetched user ${person.displayName}`);
@@ -90,9 +88,7 @@ let dao = {
   },
   fetchPersonThenRender() {
     console.log('fetchPersonThenRender');
-    fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (
-      response
-    ) {
+    fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
       if (response.ok) {
         response.json().then(function (person) {
           this.renderPerson(person);

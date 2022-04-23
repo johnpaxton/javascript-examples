@@ -28,10 +28,7 @@ function useInsertAdjacentHTML() {
 
   const list = document.createElement('ul');
   movies.forEach((movie) => {
-    list.insertAdjacentHTML(
-      'beforeEnd',
-      `<li>${movie.title} (${movie.year})</li>`
-    );
+    list.insertAdjacentHTML('beforeEnd', `<li>${movie.title} (${movie.year})</li>`);
   });
 
   // One repaint
@@ -44,9 +41,7 @@ function useInnerHTML() {
   const root = document.querySelector('#inner-html');
   root.replaceChildren();
   let html = '<ul>';
-  movies.forEach(
-    (movie) => (html += `<li>${movie.title} (${movie.year})</li>`)
-  );
+  movies.forEach((movie) => (html += `<li>${movie.title} (${movie.year})</li>`));
   html += '</ul>';
 
   // One repaint, may trigger document-wide repaint

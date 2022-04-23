@@ -1,3 +1,3 @@
 export function greeting() {
-  console.log( 'Hello from utilities.js' );
+  console.log('Hello from utilities.js');
 }

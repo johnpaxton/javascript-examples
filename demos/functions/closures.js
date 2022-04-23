@@ -16,4 +16,4 @@ function employeeFactory(firstName, lastName) {
 }
 
 const emp1 = employeeFactory('John', 'Paxton');
-console.log('employee 1\'s salary: ', emp1.getSalary());
+console.log("employee 1's salary: ", emp1.getSalary());

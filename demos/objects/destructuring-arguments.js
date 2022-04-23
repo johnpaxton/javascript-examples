@@ -8,19 +8,19 @@ const defaultConfig = {
   width: 0,
 };
 
-function createForm( config ) {
+function createForm(config) {
   const mergedOptions = { ...defaultConfig, ...config };
 }
 
-function createForm2( { primaryClass, accentClass, fields, ...foo } ) {
+function createForm2({ primaryClass, accentClass, fields, ...foo }) {
   // Whatever
-  console.log( 'Primary class is ', primaryClass );
+  console.log('Primary class is ', primaryClass);
 }
 
-function createForm3( config ) {
+function createForm3(config) {
   const primaryClass = config.primaryClass;
   const accentClass = config.accentClass;
   const fields = config.fields;
 }
 
-createForm2( defaultConfig );
+createForm2(defaultConfig);

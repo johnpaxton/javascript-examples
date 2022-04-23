@@ -6,10 +6,10 @@ const defaultConfig = {
 };
 
 export class Car extends Vehicle {
-  constructor( config = {} ) {
+  constructor(config = {}) {
     const { make, model, ...instance } = config;
-    super( { make, model } );
-    Object.assign( this, defaultConfig, instance );
+    super({ make, model });
+    Object.assign(this, defaultConfig, instance);
   }
 
   toString() {

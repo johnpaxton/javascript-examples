@@ -3,7 +3,7 @@ class Employee {
   // Private variables! New and exciting!
   #salary = 50000;
 
-  constructor( firstName, lastName, position ) {
+  constructor(firstName, lastName, position) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.position = position;
@@ -21,9 +21,9 @@ class Employee {
     return this.#salary;
   }
 
-  set salary( s ) {
-    s = Number( s );
-    if ( s && s >= this.#salary ) {
+  set salary(s) {
+    s = Number(s);
+    if (s && s >= this.#salary) {
       this.#salary = s;
     }
   }

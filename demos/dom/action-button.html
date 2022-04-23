@@ -39,14 +39,12 @@
 
       const greetButton = document.getElementById('greet-button');
       greetButton.addEventListener('click', greetHandler);
-      document
-        .getElementById('greet-name')
-        .addEventListener('keyup', (event) => {
-          if (event.code !== 'Enter') {
-            return;
-          }
-          greetHandler();
-        });
+      document.getElementById('greet-name').addEventListener('keyup', (event) => {
+        if (event.code !== 'Enter') {
+          return;
+        }
+        greetHandler();
+      });
 
       /*
       const instantInput = document.getElementById('instant-name');
@@ -57,46 +55,36 @@
       });
       */
 
-      document
-        .getElementById('instant-name')
-        .addEventListener('input', (event) => {
-          let p;
-          const parentElement = event.target.parentElement;
-          if (parentElement.lastElementChild.tagName.toUpperCase() !== 'P') {
-            p = document.createElement('p');
-            parentElement.append(p);
-          } else {
-            p = parentElement.lastElementChild;
-          }
-          p.innerText = `Instant greetings, ${event.target.value}`;
-        });
+      document.getElementById('instant-name').addEventListener('input', (event) => {
+        let p;
+        const parentElement = event.target.parentElement;
+        if (parentElement.lastElementChild.tagName.toUpperCase() !== 'P') {
+          p = document.createElement('p');
+          parentElement.append(p);
+        } else {
+          p = parentElement.lastElementChild;
+        }
+        p.innerText = `Instant greetings, ${event.target.value}`;
+      });
 
-      document
-        .getElementById('adjacent-name')
-        .addEventListener('input', (event) => {
-          const textField = event.target;
-          let output = textField.nextElementSibling;
-          if (!output || output.tagName !== 'P') {
-            output = textField.insertAdjacentElement(
-              'afterend',
-              document.createElement('p')
-            );
-          }
-          output.innerText = textField.value;
-        });
+      document.getElementById('adjacent-name').addEventListener('input', (event) => {
+        const textField = event.target;
+        let output = textField.nextElementSibling;
+        if (!output || output.tagName !== 'P') {
+          output = textField.insertAdjacentElement('afterend', document.createElement('p'));
+        }
+        output.innerText = textField.value;
+      });
 
-      document
-        .getElementById('enter-name')
-        .addEventListener('keyup', (event) => {
-          if (event.code !== 'Enter') {
-            return;
-          }
-          const enterOutput = document.getElementById('enter-output');
-          if (event.target.value.length > 0) {
-            enterOutput.innerText = `Only on Enter: ${event.target.value}.`;
-          }
-        });
-
+      document.getElementById('enter-name').addEventListener('keyup', (event) => {
+        if (event.code !== 'Enter') {
+          return;
+        }
+        const enterOutput = document.getElementById('enter-output');
+        if (event.target.value.length > 0) {
+          enterOutput.innerText = `Only on Enter: ${event.target.value}.`;
+        }
+      });
     </script>
   </body>
 </html>
