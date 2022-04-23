@@ -17,6 +17,7 @@ const c = 30;
 // This will fail
 // c = 40;
 
+// eslint-disable-next-line no-lone-blocks
 {
   let d = 'some value d';
   const e = 'some value e';

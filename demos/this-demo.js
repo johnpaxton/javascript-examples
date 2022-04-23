@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Concept demo
 let object = {
   x: 10,
@@ -50,16 +51,17 @@ class PeopleManager {
 
   doSomethingWithPeople() {
     this.people.map((person) => {
-      person.family.map((familyMember) => {
-        this.doOtherThingWithPeople(familyMember);
+      return person.family.map((familyMember) => {
+        return this.doOtherThingWithPeople(familyMember);
       });
     });
   }
 
   doSomethingWithPeople2() {
     this.people.map(function (person) {
-      person.family.map(function (familyMember) {
+      return person.family.map(function (familyMember) {
         // No longer class-level this
+        return 1;
       });
     });
   }

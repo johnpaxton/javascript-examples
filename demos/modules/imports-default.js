@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars, import/no-duplicates */
 
 // Import default, typical
 import person from './exports-default.js';

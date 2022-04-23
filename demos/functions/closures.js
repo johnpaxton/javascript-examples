@@ -1,8 +1,8 @@
 function employeeFactory(firstName, lastName) {
   let salary = 50000;
   return {
-    firstName: firstName,
-    lastName: lastName,
+    firstName,
+    lastName,
     getSalary() {
       return salary;
     },

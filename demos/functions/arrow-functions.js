@@ -13,8 +13,7 @@ const addArrow = (x, y) => {
 // If it's a one-liner, can eliminate {} and "return"
 const addArrowShort = (x, y) => x + y;
 
-// prettier-ignore
-const timesTwo = ( x ) => x * 2;
+const timesTwo = (x) => x * 2;
 
 // Probably not good for readability reasons:
 const x = (x) => x * x;
@@ -27,26 +26,27 @@ const multiLineReturn = () => (
   'three ' +
   'four ' +
   'five ' +
-  'ten ' );
+  'ten ' ); // eslint-disable-line space-in-parens
 
 function generatePersonFunction(firstName, lastName) {
   return {
-    firstName: firstName,
-    lastName: lastName,
+    // This is equivalent to firstName: firstName
+    firstName,
+    lastName,
   };
 }
 
 // A one-liner that returns an object can be confusing.
 // One-liner means (), but it's returning an object, so {} inside ()
 const generatePersonArrow = (firstName, lastName) => ({
-  firstName: firstName,
-  lastName: lastName,
+  firstName,
+  lastName,
 });
 
 const generatePersonArrowWithReturn = (firstName, lastName) => {
   return {
-    firstName: firstName,
-    lastName: lastName,
+    firstName,
+    lastName,
   };
 };
 

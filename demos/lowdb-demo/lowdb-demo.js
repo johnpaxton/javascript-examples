@@ -1,4 +1,4 @@
-//@ts-check
+// @ts-check
 import { movies } from '../../data/movies-module.js';
 import { LowSync } from './node_modules/lowdb/lib/LowSync.js';
 import { LocalStorage } from './node_modules/lowdb/lib/adapters/LocalStorage.js';
