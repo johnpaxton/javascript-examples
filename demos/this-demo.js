@@ -1,5 +1,7 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable no-unused-vars */
 // Concept demo
+// eslint-disable-next-line no-unused-vars
 let object = {
   x: 10,
   foo() {
@@ -51,17 +53,16 @@ class PeopleManager {
 
   doSomethingWithPeople() {
     this.people.map((person) => {
-      return person.family.map((familyMember) => {
-        return this.doOtherThingWithPeople(familyMember);
+      person.family.map((familyMember) => {
+        this.doOtherThingWithPeople(familyMember);
       });
     });
   }
 
   doSomethingWithPeople2() {
     this.people.map(function (person) {
-      return person.family.map(function (familyMember) {
+      person.family.map(function (familyMember) {
         // No longer class-level this
-        return 1;
       });
     });
   }
@@ -88,12 +89,26 @@ let dao = {
       }
     });
   },
+  fetchPersonArrowAndFunction() {
+    console.log('fetchPersonArrow');
+    fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
+      if (response.ok) {
+        response.json().then((person) => this.renderPerson(person));
+      }
+    });
+  },
   fetchPersonThenRender() {
     console.log('fetchPersonThenRender');
+    let outerThis = this;
+    // let self = this;
+
     fetch('http://localhost:8000/api/zippay/v1/users/205').then(function (response) {
       if (response.ok) {
         response.json().then(function (person) {
+          let innerThis = this;
+          console.log(outerThis === innerThis);
           this.renderPerson(person);
+          // self.renderPerson(person);
         });
       }
     });
@@ -104,5 +119,6 @@ let dao = {
 };
 
 // dao.fetchPerson();
-dao.fetchPersonArrow();
+// dao.fetchPersonArrow();
 // dao.fetchPersonThenRender();
+dao.fetchPersonArrowAndFunction();

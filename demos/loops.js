@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 let x = 1;
 while (x < 10) {
   // Whatever
@@ -11,6 +12,17 @@ for (let y = 0; y < 10; y++) {
   // continue to skip this iteration
 }
 
+const fruits = ['apples', 'bananas', 'pears', 'oranges'];
+
+// for-of good for values of an array
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+
+for (let index = 0; index < fruits.length; index++) {
+  console.log(fruits[index]);
+}
+
 const obj = {
   a: 'apple',
   b: 'banana',
@@ -19,6 +31,10 @@ const obj = {
     return this.a;
   },
 };
+
+// Bonus deconstruction
+const { a, c } = obj;
+const { a: foo, c: bar } = obj;
 
 // for-in for keys
 for (const key in obj) {
@@ -39,9 +55,12 @@ for (const fruit of mapFruits) {
   console.log(fruit);
 }
 
-const fruits = ['apples', 'bananas', 'pears', 'oranges'];
+for (let toople of mapFruits) {
+  let key = toople[0];
+  let value = toople[1];
+  console.log(`${key}: ${value}`);
+}
 
-// for-of good for values of an array
-for (const fruit of fruits) {
-  console.log(fruit);
+for (const [key, value] of mapFruits) {
+  console.log(`${key}: ${value}`);
 }
