@@ -16,7 +16,7 @@ if () {} else if () {} else if () {} else {}
 let someVariable = 'baz';
 
 switch (someVariable) {
-  case 'foo':
+  case 'foo': // if (someVariable === 'foo') {}
     console.log('Matched "foo"!');
     break;
   case 'bar':
