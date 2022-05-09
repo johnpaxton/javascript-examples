@@ -19,10 +19,20 @@ function loopedEvents() {
   // Returns a NodeList: https://developer.mozilla.org/en-US/docs/Web/API/NodeList
   const listItems = document.querySelectorAll('#looped>li');
 
+  for (let itemCounter = 0; itemCounter < listItems.length; itemCounter++) {
+    listItems[itemCounter].addEventListener('click', () =>
+      // eslint-disable-next-line comma-dangle
+      console.log(`You clicked on looped/${itemCounter + 1}`)
+    );
+  }
+
   // NodeLists have a forEach (but not other traversal methods)
+  /*
   listItems.forEach((item, index) =>
+    // eslint-disable-next-line comma-dangle
     item.addEventListener('click', () => console.log(`You clicked on looped/${index + 1}`))
   );
+  */
 
   // If we needed listItems to have Array functionality
   // const listItemsArray = Array.from( listItems );
