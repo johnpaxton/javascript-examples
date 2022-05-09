@@ -30,6 +30,8 @@
     <script>
       document.getElementById('list-item').addEventListener('click', () => {
         console.log('You clicked on the list item');
+        // What might this do?
+        // event.stopPropagation();
       });
 
       document.getElementById('anchor').addEventListener('click', (event) => {
@@ -39,7 +41,6 @@
 
       document.getElementById('div').addEventListener('click', () => {
         console.log('You clicked on the div');
-        let div = document.getElementById('div');
       });
 
       /*
