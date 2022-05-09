@@ -55,12 +55,14 @@ const { firstName, lastName } = person;
 // Identifiers: $, _, or alphabetical character, followed by $, _, alphanumeric
 // $, _, $foo, _foo, foo, bar, baz, something_complicated;
 
+let someValue = 10;
+
 const state = {
   aString: '',
   aNumber: 0,
   aFunction: function () {},
   anArrowFunction: () => {},
-  anotherFunction() {},
+  methodFunction() {},
   anotherObject: {
     innerObject: {
       reallyDeepObject: {
@@ -72,6 +74,9 @@ const state = {
   },
   'something-complicated': 'value',
   'some spaces': 'value',
+  localValue: someValue,
+  // Equivalent to someValue: someValue
+  someValue,
 };
 
 state['some spaces'];
