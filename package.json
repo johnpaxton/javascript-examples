@@ -1,7 +1,7 @@
 {
-  "name": "tjx-frontend-javascript",
+  "name": "javascript-examples",
   "version": "2.0.0",
-  "description": "\"JavaScript demos for TJX's EICP Cohort\"",
+  "description": "\"JavaScript examples for Speeding Planet classes\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   "author": "John Paxton <pax@speedingplanet.com>",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/EICPCohort5/javascript-examples/"
+    "url": "https://github.com/speedingplanet/javascript-examples/"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
