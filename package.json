@@ -12,7 +12,7 @@
   "author": "John Paxton <pax@speedingplanet.com>",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/speedingplanet/javascript-examples/"
+    "url": "https://github.com/johnpaxton/javascript-examples/"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
