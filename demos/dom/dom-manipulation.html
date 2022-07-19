@@ -57,6 +57,10 @@
             <p>Copy this node. Shallow, unless <code>deep</code> is <code>true</code></p>
           </li>
           <li>
+            <code>element.insertAdjacentElement(position, newElement)</code>
+            <p>location can be 'beforebegin', 'afterbegin', 'beforeend', or 'afterend'</p>
+          </li>
+          <li>
             <code>element.insertAdjacentHTML(position, HTML)</code>
             <p>
               location can be 'beforebegin', 'afterbegin', 'beforeend', or 'afterend'<br />
@@ -93,13 +97,9 @@
     </div>
     <div class="row">
       <div class="col">
-        <h3>Adding/Moving elements</h3>
+        <h3>Adding or moving elements</h3>
         <p>Given some DOM element <code>el</code> and a target <code>t</code></p>
         <ul>
-          <li>
-            <code>t.insertAdjacentElement(position, el)</code>
-            <p>location can be 'beforebegin', 'afterbegin', 'beforeend', or 'afterend'</p>
-          </li>
           <li><code>t.appendChild(el)</code> el is now the last child of t; inflexible</li>
           <li><code>t.append(el)</code> el is now the last child of t</li>
           <li><code>t.append(...elements)</code> each element is added as the last child of t</li>
