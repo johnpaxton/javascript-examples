@@ -38,10 +38,10 @@ const { a: foo, c: bar } = obj;
 
 // for-in for keys
 for (const key in obj) {
-  if (typeof obj[key] === 'string') {
-    console.log(`${key}`);
-  } else {
+  if (typeof obj[key] === 'function') {
     console.log(`Invoking ${key}:`, obj[key]());
+  } else {
+    console.log(`${key} : ${obj[key]}`);
   }
 }
 
