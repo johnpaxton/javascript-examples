@@ -20,7 +20,7 @@
             <p>
               This is some text we don't care about.
               <span id="span" style="color: red"
-                >This is text we care <a id="anchor" href="http://mathworks.com/">about</a>.</span
+                >This is text we care <a id="anchor" href="http://google.com/">about</a>.</span
               >
             </p>
           </li>
@@ -30,7 +30,6 @@
     <script>
       document.getElementById('list-item').addEventListener('click', () => {
         console.log('You clicked on the list item');
-        // What might this do?
         // event.stopPropagation();
       });
 
@@ -41,16 +40,17 @@
 
       document.getElementById('div').addEventListener('click', () => {
         console.log('You clicked on the div');
+        let div = document.getElementById('div');
       });
 
-      /*
-    document.getElementById('span').addEventListener('click', (event) => {
-      console.log('You clicked on the span');
-      event.stopPropagation();
-    });
-    */
+      document.getElementById('span').addEventListener('click', (event) => {
+        console.log('You clicked on the span');
+        event.stopPropagation();
+      });
 
+      // Other events:
       // Event capture rather than bubble, inbound rather than outbound
+      /*
       document.getElementById('div').addEventListener(
         'click',
         () => {
@@ -58,6 +58,7 @@
         },
         true
       );
+      */
 
       document.getElementById('span').addEventListener('dblclick', () => {
         console.log('You double-clicked on the span');
@@ -67,7 +68,7 @@
         'dblclick',
         (e) => {
           console.log('div: Stopping double-clicks');
-          e.stopPropagation();
+          // e.stopPropagation();
         },
         true
       );

@@ -4,39 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" />
     <title>Event Handling</title>
-    <link rel="stylesheet" href="../../css/bootstrap.css" />
   </head>
-
   <body>
     <main class="container">
-      <header>
-        <h1>Event Handling</h1>
+      <header class="row">
+        <div class="col">
+          <h1>Event Handling</h1>
+        </div>
       </header>
+
       <div class="row">
         <div class="col">
-          <button class="btn btn-primary btn-lg" id="target-button">Click me</button>
+          <button class="btn btn-primary" id="click-button">Click me</button>
         </div>
         <div class="col">
-          <p id="output"></p>
+          <button class="btn btn-danger" id="remove-button">Remove handler</button>
         </div>
       </div>
     </main>
+
     <script>
-      // let output = document.getElementById('output');
-      let output = document.querySelector('#output');
+      let button = document.querySelector('#click-button');
+      let removeButton = document.querySelector('#remove-button');
 
-      // Source of the event
-      // let button = document.getElementById('target-button');
-      let button = document.querySelector('#target-button');
-
-      // Attach handler to source
-      button.addEventListener('click', clickHandler);
-
-      // Event handler
-      function clickHandler(event) {
-        output.textContent = `${Date.now()}: You clicked on the button`;
+      function handleClick() {
+        console.log('You clicked on the button');
       }
+
+      // Add as a named function reference
+      button.addEventListener('click', handleClick);
+
+      // Add as an in-line anonymous function
+      button.addEventListener('click', function () {
+        console.log('You clicked on the button (in-line)');
+      });
+
+      // Add as an arrow function
+      button.addEventListener('click', () => {
+        console.log('You clicked on the button (arrow)');
+      });
+
+      // Can only remove named functions
+      removeButton.addEventListener(
+        'click',
+        function () {
+          button.removeEventListener('click', handleClick);
+          console.log('Handler removed from the button.');
+        },
+        { once: true }
+      );
     </script>
   </body>
 </html>
