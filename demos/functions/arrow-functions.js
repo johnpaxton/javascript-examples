@@ -15,9 +15,6 @@ const addArrowShort = (x, y) => x + y;
 
 const timesTwo = (x) => x * 2;
 
-// Probably not good for readability reasons:
-const x = (x) => x * x;
-
 // Multi-line returns are wrapped with parentheses, not curly braces
 // prettier-ignore
 const multiLineReturn = () => (
@@ -26,7 +23,7 @@ const multiLineReturn = () => (
   'three ' +
   'four ' +
   'five ' +
-  'ten ' ); // eslint-disable-line space-in-parens
+  'ten ');
 
 function generatePersonFunction(firstName, lastName) {
   return {

@@ -1,6 +1,22 @@
 /* eslint-disable no-unused-vars */
 
-// Come back to this after talking about how to declare functions
+// Function declaration
+function declaredFunction() {
+  console.log('This is a function declaration');
+}
+
+// Function expression
+const expressionFunction = function () {
+  console.log('This is a function expression');
+};
+
+// Arrow function (see arrow-functions.js for more)
+const arrowFunction = () => {
+  console.log('This is an arrow function');
+};
+
+// Hoisting
+
 basicAdd(); // works
 // assignedAdd(); // fails
 
@@ -12,16 +28,6 @@ function basicAdd() {
 // Function expression: not hoisted
 const assignedAdd = function () {
   return 2 + 2;
-};
-
-// Arrow function
-// More on this in another file
-const arrowAdd = () => 2 + 2;
-
-const arrowWithArgs = (x, y) => {
-  x = x * 2;
-  y = y / 2;
-  return x + y;
 };
 
 // Function references can be copied
@@ -47,6 +53,10 @@ addDefaults(undefined, 5); // 5
 addDefaults(1); // 11
 addDefaults(); // 10
 
+// Works
+addRest(1, 2, 3, 4, 5);
+addRest(10, undefined, 4, 8, 12);
+
 // Rest parameters
 // The "rest" of the values
 function addRest(x = 0, y = 0, ...otherParams) {
@@ -58,16 +68,36 @@ function addRest(x = 0, y = 0, ...otherParams) {
   return x + y + total;
 }
 
-// Works
-addRest(1, 2, 3, 4, 5);
-addRest(10, undefined, 4, 8, 12);
-
 function getAllParameters(...params) {
   // params is an array of all arguments
 }
 
 getAllParameters(1, 2, 3);
 getAllParameters('John', 30, true, ['a', 'b', 'c']);
+
+function addValues(config = { a: 0, b: 0, c: 0 }) {
+  return config.a + config.b + config.c;
+}
+
+function addValuesLoop(config) {
+  let total = 0;
+  for (const key in config) {
+    if (['a', 'b', 'c'].includes(key)) {
+      total += config[key];
+    }
+  }
+  return total;
+}
+
+const values = {
+  a: 1,
+  // b: 2,
+  c: 3,
+  d: 4,
+  e: 5,
+};
+
+addValues(values);
 
 // Can just vaccuum up all arguments into one array
 function addAll(...numbers) {
@@ -110,7 +140,7 @@ const result = calculator(5, 10, function (a, b) {
 });
 
 // Real-world example of passing a function to another function
-window.addEventListener('click', function (event) {
+addEventListener('click', function (event) {
   console.log('You clicked on the button!');
 });
 
@@ -123,19 +153,12 @@ function overloaded(x, y) {
   }
 }
 
-// Kinda sorta multiple return values, syntactically speaking
 function opAll(x, y) {
   return [x + y, x - y, x * y, x / y];
 }
 
+// Kinda sorta multiple return values, syntactically speaking
 const x = 10;
 const y = 20;
 const [sum, difference, product, dividend] = opAll(x, y);
 console.log(`Adding ${x} and ${y} yields ${sum}`);
-
-function foo() {
-  return 'Called foo()';
-}
-
-console.log(foo); // prints foo.toString()
-console.log(foo()); // Calls foo(), prints return value
