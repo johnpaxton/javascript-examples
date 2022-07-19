@@ -1,5 +1,12 @@
-function add(x, y) {
+// In-line export
+export function add(x, y) {
   return x + y;
 }
 
-export { add };
+// In-line export
+export function subtract(x, y) {
+  return x - y;
+}
+
+// Or export all at once
+// export { add, subtract };
