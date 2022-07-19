@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { cloneDeep } from '../../node_modules/lodash-es/lodash.js';
 
 const defaultConfig = {
@@ -80,10 +79,6 @@ export class Vehicle {
   speed = 0;
   /*
   get speed() {
-    return this.speed;
-  }
-
-  speed() {
     return this.speed;
   }
   */
