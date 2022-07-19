@@ -13,7 +13,8 @@ function getUsersPromise() {
   return resultsPromise;
 }
 
-getUsersPromise().then(function () {
+getUsersPromise().then(function (users) {
+  // Then we could look at the processed data
   // console.log(`There are ${users.length} users.`);
 });
 

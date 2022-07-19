@@ -36,8 +36,9 @@ const x = p3.then((result) => {
   console.log('result level 3:', result);
 });
 
-x.then(() => {
-  // do something with the value here;
+x.then((someValue) => {
+  // someValue is undefined, because we did not return anything
+  // from the last promise
 });
 
 async function whatever() {
