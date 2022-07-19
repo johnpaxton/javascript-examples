@@ -4,64 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Query Selector Demos</title>
-    <style>
-      #first-team {
-        background-color: blue;
-        color: red;
-      }
-
-      li {
-        font-family: Arial, Helvetica, sans-serif;
-      }
-    </style>
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" />
+    <title>Query Selector (All)</title>
   </head>
-
   <body>
-    <header>
-      <h1>Query Selector Demos</h1>
-    </header>
-    <section>
-      <ul>
-        <li id="first-team">Red Sox</li>
-        <li>Celtics</li>
-        <li>Bruins</li>
-        <li>Patriots</li>
-      </ul>
-    </section>
+    <main class="container">
+      <header class="row">
+        <div class="col">
+          <h1>Query Selector (All)</h1>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col">
+          <ul id="fruits">
+            <li>apples</li>
+            <li>peaches</li>
+            <li>bananas</li>
+            <li>oranges</li>
+            <li>lemons</li>
+            <li>limes</li>
+            <li>kiwis</li>
+            <li>pears</li>
+            <li>plantains</li>
+            <li>tangerines</li>
+          </ul>
+        </div>
+      </div>
+    </main>
     <script>
-      // let sox = document.getElementById('first-team');
-      let sox = document.querySelector('#first-team');
-      let whatIsThis = document.querySelector('li');
-      sox === whatIsThis; // true
+      // First match only, null if not found
+      let item = document.querySelector('ul>li');
+      console.log('item: ', item);
 
-      // Returns a NodeList of matching elements
-      let listItems = document.querySelectorAll('li');
+      // All matches, as a NodeList, empty NodeList if not found
+      let nodeList = document.querySelectorAll('ul>li');
+      console.log('nodeList: ', nodeList);
 
-      // As a named function
-      listItems.forEach(printListItem);
+      nodeList.forEach((li) => console.log(li.textContent));
+      let nodeArray = Array.from(nodeList);
+      let fruits = nodeArray.map((li) => li.textContent);
+      console.log('fruits: ', fruits);
 
-      // Inline function definition
-      listItems.forEach(function (item) {
-        console.log(item.textContent);
-      });
+      let ul = document.getElementById('fruits');
 
-      // Inline arrow function (ES2015, not supported by IE11)
-      listItems.forEach((item) => console.log(item.textContent));
-
-      function printListItem(item) {
-        console.log(item.textContent);
-      }
-
-      for (let x = 0; x < listItems.length; x++) {
-        let item = listItems[x];
-        // let item = listItems.item(x);
-        console.log(item.textContent);
-      }
-
-      for (let item of listItems) {
-        console.log(item.textContent);
-      }
+      let li = ul.querySelectorAll('li');
     </script>
   </body>
 </html>
