@@ -5,7 +5,7 @@ const anchor = document.querySelector('a');
 
 section.addEventListener('click', () => console.log('You clicked on the section'));
 
-listItem.addEventListener('click', () => {
+listItem.addEventListener('click', (event) => {
   console.log(
     'You clicked on the list item: ',
     event.target.nodeName,

@@ -7,10 +7,16 @@ class Car {
   #odometer = 0;
   #speed = 0;
 
-  constructor(make, model, odometer) {
-    this.make = make;
-    this.model = model;
-    this.#odometer = odometer;
+  constructor(config = {}) {
+    // Could move this out of the class so it's not always re-declared:
+    let publicKeys = ['make', 'model'];
+    for (let key of publicKeys) {
+      this[key] = config[key];
+    }
+
+    if (config.odometer) {
+      this.#odometer = config.odometer;
+    }
   }
 
   // Public methods
@@ -34,7 +40,7 @@ class Car {
   }
 }
 
-const honda = new Car('Honda', 'Civic', 50000);
+const honda = new Car({ make: 'Honda', model: 'Civic', odometer: 50000 });
 console.log('honda: ', honda);
 console.log('honda: ' + honda);
 
