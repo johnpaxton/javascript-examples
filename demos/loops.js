@@ -8,13 +8,19 @@ while (x < 10) {
 // Initialize your counter!
 for (let y = 0; y < 10; y++) {
   // Whatever
-  // break to stop
-  // continue to skip this iteration
+  // "continue" to skip this iteration
+  // Skip odd numbers
+  if (y % 2) continue;
+
+  // "break" to stop and break out of the loop
+  // Stop the loop at 8
+  if (y === 8) break;
 }
 
 const fruits = ['apples', 'bananas', 'pears', 'oranges'];
 
 // for-of good for values of an array
+// Goes over the VALUES of a data structure
 for (const fruit of fruits) {
   console.log(fruit);
 }
@@ -30,13 +36,21 @@ const obj = {
   getA() {
     return this.a;
   },
+  getC: function () {
+    return this.c;
+  },
+};
+
+obj.getB = function () {
+  return this.b;
 };
 
 // Bonus deconstruction
 const { a, c } = obj;
 const { a: foo, c: bar } = obj;
 
-// for-in for keys
+// for-in for objects, because it looks at the KEYS
+// of a data structure
 for (const key in obj) {
   if (typeof obj[key] === 'function') {
     console.log(`Invoking ${key}:`, obj[key]());

@@ -5,26 +5,51 @@ function useCreateElement() {
   console.log('Using document.createElement');
   const root = document.querySelector('#create-element');
 
-  // Make sure it's empty
-  root.replaceChildren();
-
   const list = document.createElement('ul');
+
+  // Using for-of
+  for (let movie of movies) {
+    const item = document.createElement('li');
+    item.textContent = `${movie.title} (${movie.year})`;
+
+    // All elements have append(), prepend(), before(), after()
+    // Equivalent to afterbegin, beforeend, beforebegin, afterend in insertAdjacentHTML
+    // list.append(item);
+    list.append(item);
+  }
+
+  // Using Array.prototype.forEach
+  /*
   movies.forEach((movie) => {
     const item = document.createElement('li');
     item.textContent = `${movie.title} (${movie.year})`;
-    // item.textContent = movie.title + ' (' + movie.year + ')';
     list.append(item);
   });
+  */
+
+  // Using Array.prototype.map
+  /*
+  let items = movies.map((movie) => {
+    const item = document.createElement('li');
+    item.textContent = `${movie.title} (${movie.year})`;
+    return item;
+  });
+
+  // Items is an array, append() expects individual arguments, e.g.
+  // append(listItem1, listItem2, listItem3), NOT an array
+  // The spread (...) operator, spreads the array into individual items
+  list.append(...items);
+  */
 
   // One repaint
-  root.append(list);
+  root.replaceChildren(list);
 }
 
 // Efficient, less verbose
 function useInsertAdjacentHTML() {
   console.log('Using element.insertAdjacentHTML()');
   const root = document.querySelector('#insert-adjacent-html');
-  root.replaceChildren();
+  // root.replaceChildren();
 
   const list = document.createElement('ul');
   movies.forEach((movie) => {
@@ -32,20 +57,24 @@ function useInsertAdjacentHTML() {
   });
 
   // One repaint
-  root.append(list);
+  // root.append(list);
+  root.replaceChildren(list);
 }
 
 // Inefficient, also easier to break
 function useInnerHTML() {
   console.log('Using element.innerHTML');
   const root = document.querySelector('#inner-html');
-  root.replaceChildren();
-  let html = '<ul>';
-  movies.forEach((movie) => (html += `<li>${movie.title} (${movie.year})</li>`));
-  html += '</ul>';
+
+  // Empty out the element
+  root.innerHTML = '';
+
+  let list = '<ul>';
+  movies.forEach((movie) => (list += `<li>${movie.title} (${movie.year})</li>`));
+  list += '</ul>';
 
   // One repaint, may trigger document-wide repaint
-  root.innerHTML = html;
+  root.innerHTML = list;
 }
 
 useCreateElement();

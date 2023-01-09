@@ -19,36 +19,38 @@
           <li id="list-item">
             <p>
               This is some text we don't care about.
-              <span id="span" style="color: red"
-                >This is text we care <a id="anchor" href="http://google.com/">about</a>.</span
-              >
+              <span id="span" style="color: red">
+                This is text we care
+                <a id="anchor" href="http://google.com/">about</a>
+                .
+              </span>
             </p>
           </li>
         </ul>
       </div>
     </section>
     <script>
-      document.getElementById('list-item').addEventListener('click', () => {
+      document.getElementById('list-item').addEventListener('click', (event) => {
         console.log('You clicked on the list item');
         // event.stopPropagation();
       });
 
       document.getElementById('anchor').addEventListener('click', (event) => {
         console.log('You clicked on the anchor');
-        event.preventDefault();
+        // event.preventDefault();
       });
 
-      document.getElementById('div').addEventListener('click', () => {
+      document.getElementById('div').addEventListener('click', (event) => {
         console.log('You clicked on the div');
         let div = document.getElementById('div');
+        // event.preventDefault();
       });
 
       document.getElementById('span').addEventListener('click', (event) => {
         console.log('You clicked on the span');
-        event.stopPropagation();
+        // event.stopPropagation();
       });
 
-      // Other events:
       // Event capture rather than bubble, inbound rather than outbound
       /*
       document.getElementById('div').addEventListener(
@@ -60,6 +62,7 @@
       );
       */
 
+      // Listening for double clicks, instead of single clicks
       document.getElementById('span').addEventListener('dblclick', () => {
         console.log('You double-clicked on the span');
       });

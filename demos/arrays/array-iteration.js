@@ -1,10 +1,9 @@
-// array-iteration
 /* eslint-disable no-unused-vars */
 
-const states = ['NJ', 'MA', 'CA', 'IL', 'FL'];
+const states = ['NJ', 'MA', 'CA', 'IL', 'FL', 'CT', 'ME'];
 
 // Iterator functions usually take a callback/predicate with this signature
-// (item?, index?, array?) => void
+// array.iteratorFn((item?, index?, array?) => void)
 // Technically, all three are optional arguments!
 // No breaking, unfortunately
 // No return value either
@@ -84,6 +83,6 @@ const firstStateWithN = states.find((state) => state.includes('N'));
 // The argument function is referred to as an accumulator
 // Tallies values left-to-right
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let total = numbers.reduce((runningTotal, nextValue) => runningTotal + nextValue, 0);
+let total = numbers.reduce((runningTotal, currentItem) => runningTotal + currentItem, 0);
 
 // Array.prototype.reduceRight() is also available, which tallies values right-to-left

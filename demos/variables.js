@@ -6,6 +6,9 @@
 // ...later
 // x = 10;
 
+// Variables must start with $, _, or an alphabetical character
+// followed by $, _, or alphanumeric character
+// No dashes, or other punctuation
 let a;
 a = 10;
 
@@ -21,11 +24,13 @@ const c = 30;
 {
   let d = 'some value d';
   const e = 'some value e';
-  console.log('d:', d, 'e:', e);
+
+  // console.log with multiple arguments
+  console.log('Inside block: d:', d, 'e:', e);
 }
 
 // This will fail
-// console.log( 'd:', d, 'e:', e );
+// console.log('Outside block d:', d, 'e:', e);
 
 // eslint-disable-next-line no-lone-blocks
 {
@@ -50,15 +55,18 @@ const aString = 'string';
 // eslint-disable-next-line
 const aDoubleQuotedString = "double-quoted string";
 
+// Backticks allow multi-line strings
+let aReallyLongLine = `
+This
+is
+a
+really
+long
+line`;
+
+// Backticks also allow variable interpolation in ${}
 const templateString = `Value of aString: ${aString}`;
 const todayTemplate = `Today is ${Date.now()}`;
-const todayTemplateAsFunction = function () {
-  return 'Today is ' + Date.now();
-};
-const multiLineTemplate = `
-hello.
-how are you?
-`;
 console.log(todayTemplate);
 
 const aNumber = 10;
@@ -76,6 +84,7 @@ multiDimensionalArray.push([7, 8]);
 
 console.log(multiDimensionalArray[0][1]);
 
+// Also an "object literal"
 const anObject = {
   firstName: 'John',
   lastName: 'Paxton',

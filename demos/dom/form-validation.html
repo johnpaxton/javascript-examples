@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/css/bootstrap.css" />
     <title>Form Validation</title>
     <style>
       input.touched:invalid {
@@ -28,30 +28,34 @@
         <div class="col-8">
           <form id="validation-form">
             <div>
-              <label for="v-required">Required</label>
+              <label for="v-required" class="form-label">Required</label>
               <input
                 type="text"
                 name="v-required"
                 id="v-required"
                 class="form-control untouched"
-                required
-              />
-              <div>Validity State: <span class="validity-state"></span></div>
+                required />
+              <div>
+                Validity State:
+                <span class="validity-state"></span>
+              </div>
             </div>
             <div>
-              <label for="v-pattern">Pattern</label>
+              <label for="v-pattern" class="form-label">Pattern</label>
               <input
                 type="text"
                 name="v-pattern"
                 id="v-pattern"
                 class="form-control untouched"
                 required
-                pattern="[A-Z]\p{Letter}+"
-              />
-              <div>Validity State: <span class="validity-state"></span></div>
+                pattern="[A-Z]\p{Letter}+" />
+              <div>
+                Validity State:
+                <span class="validity-state"></span>
+              </div>
             </div>
             <div>
-              <label for="v-minmaxlen">Min/Max length</label>
+              <label for="v-minmaxlen" class="form-label">Min/Max length</label>
               <input
                 type="text"
                 name="v-minmaxlen"
@@ -59,26 +63,33 @@
                 class="form-control untouched"
                 required
                 minlength="3"
-                maxlength="10"
-              />
-              <div>Validity State: <span class="validity-state"></span></div>
+                maxlength="10" />
+              <div>
+                Validity State:
+                <span class="validity-state"></span>
+              </div>
             </div>
             <div>
-              <label for="v-number">Number</label>
+              <label for="v-number" class="form-label">Number</label>
               <input type="number" name="v-number" id="v-number" class="form-control untouched" />
-              <div>Validity State: <span class="validity-state"></span></div>
+              <div>
+                Validity State:
+                <span class="validity-state"></span>
+              </div>
             </div>
             <div>
-              <label for="v-date">Date</label>
+              <label for="v-date" class="form-label">Date</label>
               <input
                 type="date"
                 name="v-date"
                 id="v-date"
                 class="form-control untouched"
                 min="2021-05-15"
-                max="2021-08-15"
-              />
-              <div>Validity State: <span class="validity-state"></span></div>
+                max="2021-08-15" />
+              <div>
+                Validity State:
+                <span class="validity-state"></span>
+              </div>
             </div>
 
             <div class="mt-2"><button class="btn btn-danger" type="submit">Validate</button></div>

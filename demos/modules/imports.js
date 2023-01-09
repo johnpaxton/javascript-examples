@@ -1,6 +1,4 @@
-/* eslint-disable */
-
-// import {a} from './exports.js';
+/* eslint-disable no-unused-vars, import/first, import/no-duplicates */
 
 // Import one item; typical
 import { x } from './exports.js';
@@ -10,8 +8,8 @@ console.log(x); // 10
 import { a, d } from './exports.js';
 
 // Import and rename
-import { b as bee } from './exports.js';
-console.log(bee); // 2
+import { a as alpha } from './exports.js';
+console.log(alpha); // 1
 
 // Rename one, not the other
 import { x as q, y } from './exports.js';

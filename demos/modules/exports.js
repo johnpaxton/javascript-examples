@@ -21,3 +21,7 @@ export const y = 20;
 export function bar() {
   console.log('exports.bar()');
 }
+
+export class Book {
+  // Whatever a Book is
+}

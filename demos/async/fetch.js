@@ -1,3 +1,5 @@
+// XMLHttpRequest
+
 const baseURL = 'http://localhost:8000/api/zippay/v1/users?_delay=3000';
 
 const fetchPromise = fetch(baseURL);
