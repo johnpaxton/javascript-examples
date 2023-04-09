@@ -1,0 +1,43 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es2021": true,
+    "mocha": true
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "plugins": ["@babel"],
+  "extends": ["standard"],
+  "rules": {
+		"array-bracket-newline": ["error", {"minItems": 2}],
+		"array-element-newline": ["error", { "multiline": true }],
+		"comma-dangle": [
+      "error",
+      {
+        "functions": "never",
+        "arrays": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "indent": ["warn", "tab", { "SwitchCase": 1 }],
+    "max-len": ["warn", { "code": 100, "comments": 120 }],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 1 }],
+    "no-tabs": ["off"],
+    "no-unused-vars": ["warn"],
+		"object-curly-newline": ["error", {
+			"ImportDeclaration": {"minProperties": 4},
+			"ExportDeclaration": {"minProperties": 2},
+			"ObjectExpression": {"minProperties": 2, "multiline": true},
+			"ObjectPattern": {"minProperties": 3}
+		}],
+    "object-property-newline": [ "error", { "allowAllPropertiesOnSameLine": false } ],
+    "prefer-const": "off",
+    "semi": ["error", "always"],
+    "quotes": ["warn", "single"],
+    "space-before-function-paren": ["error", { "named": "never" }]
+  },
+  "ignorePatterns": ["node_modules"]
+}
