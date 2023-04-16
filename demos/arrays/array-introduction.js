@@ -4,7 +4,9 @@
 const largeArray = new Array(10000);
 
 // Create an array
-let states = ['NJ', 'MA', 'CA', 'IL', 'FL'];
+let states = [
+	'NJ', 'MA', 'CA', 'IL', 'FL',
+];
 
 // Create an array from a string
 let values = '1, 2, 3, 4, 5, 6';
@@ -29,10 +31,14 @@ states.push('WA');
 states.push('TX', 'CO');
 
 // Not what you'd expect: pushes the entire array as one item!
-states.push(['OR', 'WA', 'ID']);
+states.push([
+	'OR', 'WA', 'ID',
+]);
 
 // Better, "spreads" the array out into individual items
-states.push(...['OR', 'WA', 'ID']);
+states.push(...[
+	'OR', 'WA', 'ID',
+]);
 
 // states is now one element shorter
 const lastElement = states.pop();
@@ -63,9 +69,15 @@ states.slice(1, -2);
 let copiedStates = [...states];
 
 // You can include multiple arrays, so merging arrays gets easier
-let easternStates = ['NJ', 'NY', 'MA'];
-let westernStates = ['WA', 'OR', 'CA'];
-let allStates = [...easternStates, ...westernStates];
+let easternStates = [
+	'NJ', 'NY', 'MA',
+];
+let westernStates = [
+	'WA', 'OR', 'CA',
+];
+let allStates = [
+	...easternStates, ...westernStates,
+];
 
 // Unwind/spread an array into arguments
 easternStates.push(...westernStates);
@@ -91,28 +103,29 @@ states.sort();
 let sortedStates = [...states].sort();
 
 // Create a copy, sort it, reverse it
-const reversesortedStates = [...states].sort().reverse();
+const reversesortedStates = [...states].sort()
+	.reverse();
 
 // Easy numeric sort
 states.sort((a, b) => b - a);
 
 // Custom sorting
 const people = [
-  {
-    firstName: 'John',
-    lastName: 'Paxton',
-    state: 'NJ',
-  },
-  {
-    firstName: 'Dann',
-    lastName: 'Russo',
-    state: 'MA',
-  },
-  {
-    firstName: 'Andreina',
-    lastName: 'Castillo',
-    state: 'NJ',
-  },
+	{
+		firstName: 'John',
+		lastName: 'Paxton',
+		state: 'NJ',
+	},
+	{
+		firstName: 'Dann',
+		lastName: 'Russo',
+		state: 'MA',
+	},
+	{
+		firstName: 'Andreina',
+		lastName: 'Castillo',
+		state: 'NJ',
+	},
 ];
 
 // Sort alphabetically by lastName
@@ -124,11 +137,11 @@ const people = [
 // 'ab' is greater than 'aa' in JavaScript, or put another way
 // strings higher in alphabetical order are less than those that are lower
 people.sort((p1, p2) => {
-  if (p1.lastName > p2.lastName) {
-    return -1;
-  } else if (p1.lastName < p2.lastName) {
-    return 1;
-  } else {
-    return 0;
-  }
+	if (p1.lastName > p2.lastName) {
+		return -1;
+	} else if (p1.lastName < p2.lastName) {
+		return 1;
+	} else {
+		return 0;
+	}
 });

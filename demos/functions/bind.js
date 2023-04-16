@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // Binding arguments
 function greetFullName(firstName, lastName) {
-  console.log(`Hello, ${firstName} ${lastName}`);
+	console.log(`Hello, ${firstName} ${lastName}`);
 }
 
 greetFullName('Navreet', 'Kaur');
@@ -12,18 +12,18 @@ everyoneNamedGeorge('Smith');
 
 // Binding context
 let person1 = {
-  firstName: 'John',
-  lastName: 'Paxton',
+	firstName: 'John',
+	lastName: 'Paxton',
 };
 
 let person2 = {
-  firstName: 'Ophelia',
-  lastName: 'Montoya',
+	firstName: 'Ophelia',
+	lastName: 'Montoya',
 };
 
 // Running this right now, it will pick up whatever its current context is
 function printName() {
-  return this.firstName + ' ' + this.lastName;
+	return this.firstName + ' ' + this.lastName;
 }
 
 // Prints nothing (unless there are global variables for firstName and lastName)
@@ -40,54 +40,54 @@ let p2PrintName = printName.bind(person2);
 p2PrintName();
 
 class DeepContext {
-  value = 'instance';
+	value = 'instance';
 
-  // Fails because the context of 'this' in innerFunction is missing
-  outerFunctionFails() {
-    console.log('outerFunctionFails: this.value is:', this.value);
+	// Fails because the context of 'this' in innerFunction is missing
+	outerFunctionFails() {
+		console.log('outerFunctionFails: this.value is:', this.value);
 
-    function innerFunction() {
-      console.log('\tinnerFunction: this.value is:', this.value);
-    }
+		function innerFunction() {
+			console.log('\tinnerFunction: this.value is:', this.value);
+		}
 
-    console.log('\tCalling innerFunction, which will have an error.');
-    innerFunction();
-  }
+		console.log('\tCalling innerFunction, which will have an error.');
+		innerFunction();
+	}
 
-  outerFunctionArrow() {
-    console.log('outerFunctionArrow: this.value is:', this.value);
+	outerFunctionArrow() {
+		console.log('outerFunctionArrow: this.value is:', this.value);
 
-    let arrowFunctionsAreAwesome = () => {
-      console.log('\tarrowFunctionsAreAwesome: this.value is:', this.value);
-    };
+		let arrowFunctionsAreAwesome = () => {
+			console.log('\tarrowFunctionsAreAwesome: this.value is:', this.value);
+		};
 
-    console.log('\tCalling an arrow function first (it works!)');
-    arrowFunctionsAreAwesome();
-  }
+		console.log('\tCalling an arrow function first (it works!)');
+		arrowFunctionsAreAwesome();
+	}
 
-  outerFunctionBind() {
-    console.log('outerFunctionBind: this.value is:', this.value);
+	outerFunctionBind() {
+		console.log('outerFunctionBind: this.value is:', this.value);
 
-    function innerFunction() {
-      console.log('\tinnerFunction: this.value is:', this.value);
-    }
-    let boundInnerFunction = innerFunction.bind(this);
+		function innerFunction() {
+			console.log('\tinnerFunction: this.value is:', this.value);
+		}
+		let boundInnerFunction = innerFunction.bind(this);
 
-    console.log('\tCalling innerFunction, bound to the correct context, should succeed');
-    boundInnerFunction();
-  }
+		console.log('\tCalling innerFunction, bound to the correct context, should succeed');
+		boundInnerFunction();
+	}
 
-  outerFunctionClosure() {
-    console.log('outerFunctionArrow: this.value is:', this.value);
+	outerFunctionClosure() {
+		console.log('outerFunctionArrow: this.value is:', this.value);
 
-    // Sometimes seen as
-    // let that = this;
-    let self = this;
-    function innerFunction() {
-      console.log('\tinnerFunction: this.value is:', self.value);
-    }
+		// Sometimes seen as
+		// let that = this;
+		let self = this;
+		function innerFunction() {
+			console.log('\tinnerFunction: this.value is:', self.value);
+		}
 
-    console.log('\tCalling innerFunction, using the outer context, should succeed');
-    innerFunction();
-  }
+		console.log('\tCalling innerFunction, using the outer context, should succeed');
+		innerFunction();
+	}
 }

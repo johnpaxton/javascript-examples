@@ -1,37 +1,37 @@
 class Car {
-  // Public members
-  make = '';
-  model = '';
+	// Public members
+	make = '';
+	model = '';
 
-  // Private members
-  #odometer = 0;
-  #speed = 0;
+	// Private members
+	#odometer = 0;
+	#speed = 0;
 
-  constructor(make, model, odometer) {
-    this.make = make;
-    this.model = model;
-    this.#odometer = odometer;
-  }
+	constructor(make, model, odometer) {
+		this.make = make;
+		this.model = model;
+		this.#odometer = odometer;
+	}
 
-  // Public methods
-  accelerate(amount) {
-    this.#setSpeed(amount);
-  }
+	// Public methods
+	accelerate(amount) {
+		this.#setSpeed(amount);
+	}
 
-  getSpeed() {
-    return this.#speed;
-  }
+	getSpeed() {
+		return this.#speed;
+	}
 
-  // Private method
-  #setSpeed(amount) {
-    if (isNaN(amount)) return;
+	// Private method
+	#setSpeed(amount) {
+		if (isNaN(amount)) return;
 
-    this.#speed += amount;
-  }
+		this.#speed += amount;
+	}
 
-  toString() {
-    return this.make + ' ' + this.model;
-  }
+	toString() {
+		return this.make + ' ' + this.model;
+	}
 }
 
 const honda = new Car('Honda', 'Civic', 50000);

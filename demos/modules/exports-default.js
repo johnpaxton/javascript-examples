@@ -4,8 +4,8 @@
 export const x = 10;
 
 const person = {
-  firstName: 'John',
-  lastName: 'Paxton',
+	firstName: 'John',
+	lastName: 'Paxton',
 };
 
 export default person;

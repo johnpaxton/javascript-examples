@@ -22,11 +22,11 @@ const c = 30;
 
 // eslint-disable-next-line no-lone-blocks
 {
-  let d = 'some value d';
-  const e = 'some value e';
+	let d = 'some value d';
+	const e = 'some value e';
 
-  // console.log with multiple arguments
-  console.log('Inside block: d:', d, 'e:', e);
+	// console.log with multiple arguments
+	console.log('Inside block: d:', d, 'e:', e);
 }
 
 // This will fail
@@ -34,15 +34,15 @@ const c = 30;
 
 // eslint-disable-next-line no-lone-blocks
 {
-  var f = 'some value f';
+	var f = 'some value f';
 }
 
 // This will ... not fail?
 console.log('f:', f);
 
 function varScope() {
-  var g = 'some value g';
-  console.log('In function:', g);
+	var g = 'some value g';
+	console.log('In function:', g);
 }
 
 // This will fail ...?
@@ -72,47 +72,55 @@ console.log(todayTemplate);
 const aNumber = 10;
 const aLongNumber = 10_000_000_000_000_000_000;
 const aBoolean = true;
-const anArray = [1, 2, 3, 4];
+const anArray = [
+	1, 2, 3, 4,
+];
 anArray.push(5, 6, 7);
 
 const multiDimensionalArray = [
-  [1, 2],
-  [3, 4],
-  [5, 6],
+	[
+		1, 2,
+	],
+	[
+		3, 4,
+	],
+	[
+		5, 6,
+	],
 ];
-multiDimensionalArray.push([7, 8]);
+multiDimensionalArray.push([
+	7, 8,
+]);
 
 console.log(multiDimensionalArray[0][1]);
 
 // Also an "object literal"
 const anObject = {
-  firstName: 'John',
-  lastName: 'Paxton',
-  'zip code': '07110',
-  state: 'NJ',
+	firstName: 'John',
+	lastName: 'Paxton',
+	'zip code': '07110',
+	state: 'NJ',
 };
 
 console.log(anObject.firstName);
 console.log(anObject['zip code']);
 
-const data = {
-  firstNames: [],
-};
+const data = { firstNames: [] };
 
 data.firstNames.push('Arpan', 'John', 'Anita');
 
 const PI = 3.14;
 
 const myConstants = {
-  pi: 3.14,
-  gravity: 9.8,
+	pi: 3.14,
+	gravity: 9.8,
 };
 
 Object.freeze(myConstants);
 console.log(Math.PI);
 
 const aFunction = function (x, y) {
-  return x + y;
+	return x + y;
 };
 
 aFunction(1, 2);

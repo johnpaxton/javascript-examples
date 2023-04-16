@@ -2,12 +2,12 @@
 
 // Function declaration
 function addFunction(x, y) {
-  return x + y;
+	return x + y;
 }
 
 // Arrow function expression
 const addArrow = (x, y) => {
-  return x + y;
+	return x + y;
 };
 
 // If it's a one-liner, can eliminate {} and "return"
@@ -18,7 +18,7 @@ const timesTwo = (x) => x * 2;
 // Multi-line returns are wrapped with parentheses, not curly braces
 // prettier-ignore
 const multiLineReturn = () => (
-  'one ' +
+	'one ' +
   'two ' +
   'three ' +
   'four ' +
@@ -26,25 +26,25 @@ const multiLineReturn = () => (
   'ten ');
 
 function generatePersonFunction(firstName, lastName) {
-  return {
-    // This is equivalent to firstName: firstName
-    firstName,
-    lastName,
-  };
+	return {
+		// This is equivalent to firstName: firstName
+		firstName,
+		lastName,
+	};
 }
 
 // A one-liner that returns an object can be confusing.
 // One-liner means (), but it's returning an object, so {} inside ()
 const generatePersonArrow = (firstName, lastName) => ({
-  firstName,
-  lastName,
+	firstName,
+	lastName,
 });
 
 const generatePersonArrowWithReturn = (firstName, lastName) => {
-  return {
-    firstName,
-    lastName,
-  };
+	return {
+		firstName,
+		lastName,
+	};
 };
 
 const filter = (value) => (value > 10 ? value : value + 10);

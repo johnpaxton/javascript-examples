@@ -1,18 +1,18 @@
 /* eslint-disable no-unused-vars, no-unused-expressions */
 const person = {
-  firstName: 'John',
-  lastName: 'Paxton',
-  city: 'Nutley',
-  state: 'NJ',
+	firstName: 'John',
+	lastName: 'Paxton',
+	city: 'Nutley',
+	state: 'NJ',
 
-  // Different ways to add a function
-  getState() {
-    return this.state;
-  },
-  getCity: function () {
-    return this.city;
-  },
-  add: (x, y) => x + y,
+	// Different ways to add a function
+	getState() {
+		return this.state;
+	},
+	getCity: function () {
+		return this.city;
+	},
+	add: (x, y) => x + y,
 };
 
 // Iteration possibilities
@@ -22,13 +22,14 @@ const values = Object.values(person);
 // entries [[key1, value1], [key2, value2]]
 const entries = Object.entries(person);
 
-Object.keys(person).forEach((key) => {
-  console.log(`${key}: ${person[key]}`);
-});
+Object.keys(person)
+	.forEach((key) => {
+		console.log(`${key}: ${person[key]}`);
+	});
 
 // Object.keys() equivalent
 for (const key in person) {
-  // Whatever
+	// Whatever
 }
 
 // enumerable: does this key show up in a loop?
@@ -39,14 +40,14 @@ for (const key in person) {
 // More here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty#description
 
 Object.keys(person)
-  .filter((key) => typeof person[key] === 'function')
-  .forEach((key) => {
-    Object.defineProperty(person, key, { enumerable: false });
-  });
+	.filter((key) => typeof person[key] === 'function')
+	.forEach((key) => {
+		Object.defineProperty(person, key, { enumerable: false });
+	});
 
 Object.defineProperty(person, 'someMethod', {
-  enumerable: false,
-  value: () => console.log('Some method'),
+	enumerable: false,
+	value: () => console.log('Some method'),
 });
 
 // Destructuring
@@ -58,25 +59,23 @@ const { firstName, lastName } = person;
 let someValue = 10;
 
 const state = {
-  aString: '',
-  aNumber: 0,
-  aFunction: function () {},
-  anArrowFunction: () => {},
-  methodFunction() {},
-  anotherObject: {
-    innerObject: {
-      reallyDeepObject: {
-        kindOfRidiculousObject: {
-          message: 'Hi',
-        },
-      },
-    },
-  },
-  'something-complicated': 'value',
-  'some spaces': 'value',
-  localValue: someValue,
-  // Equivalent to someValue: someValue
-  someValue,
+	aString: '',
+	aNumber: 0,
+	aFunction: function () {},
+	anArrowFunction: () => {},
+	methodFunction() {},
+	anotherObject: {
+		innerObject: {
+			reallyDeepObject: {
+				kindOfRidiculousObject: { message: 'Hi' },
+			},
+		},
+	},
+	'something-complicated': 'value',
+	'some spaces': 'value',
+	localValue: someValue,
+	// Equivalent to someValue: someValue
+	someValue,
 };
 
 state['some spaces'];

@@ -17,16 +17,18 @@ const today = new Date();
 // Strings, numbers and booleans
 const a = 10;
 
-const names = ['John', 'Dan', 'Tim'];
+const names = [
+	'John', 'Dan', 'Tim',
+];
 names.push('Andre');
 
 function scope() {
-  var someVar = 'some value in a function';
-  return 1;
+	var someVar = 'some value in a function';
+	return 1;
 }
 
 for (let x = 0; x < 10; x++) {
-  let someVar = 'x is ' + x;
+	let someVar = 'x is ' + x;
 }
 
 scope();

@@ -19,9 +19,9 @@ foo.append(div); // Repaint here
 const list = document.createElement('ul');
 
 for (let x = 0; x < 1000; x++) {
-  const li = document.createElement('li');
-  li.textContent = x;
-  list.append();
+	const li = document.createElement('li');
+	li.textContent = x;
+	list.append();
 }
 
 foo.append(list);
