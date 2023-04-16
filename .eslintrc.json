@@ -30,7 +30,7 @@
 		"object-curly-newline": ["error", {
 			"ImportDeclaration": {"minProperties": 4},
 			"ExportDeclaration": {"minProperties": 2},
-			"ObjectExpression": {"minProperties": 2, "multiline": true},
+			"ObjectExpression": {"minProperties": 2, "multiline": true, "consistent": true },
 			"ObjectPattern": {"minProperties": 3}
 		}],
     "object-property-newline": [ "error", { "allowAllPropertiesOnSameLine": false } ],
