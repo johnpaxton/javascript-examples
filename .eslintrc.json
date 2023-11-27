@@ -1,43 +1,55 @@
 {
-  "env": {
-    "browser": true,
-    "node": true,
-    "es2021": true,
-    "mocha": true
-  },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false
-  },
-  "plugins": ["@babel"],
-  "extends": ["standard"],
-  "rules": {
-		"array-bracket-newline": ["error", {"minItems": 2}],
-		"array-element-newline": ["error", { "multiline": true }],
-		"comma-dangle": [
-      "error",
-      {
-        "functions": "never",
-        "arrays": "always-multiline",
-        "objects": "always-multiline"
-      }
-    ],
-    "indent": ["warn", "tab", { "SwitchCase": 1 }],
-    "max-len": ["warn", { "code": 100, "comments": 120 }],
-    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 1 }],
-    "no-tabs": ["off"],
-    "no-unused-vars": ["warn"],
-		"object-curly-newline": ["error", {
-			"ImportDeclaration": {"minProperties": 4},
-			"ExportDeclaration": {"minProperties": 2},
-			"ObjectExpression": {"minProperties": 2, "multiline": true, "consistent": true },
-			"ObjectPattern": {"minProperties": 3}
-		}],
-    "object-property-newline": [ "error", { "allowAllPropertiesOnSameLine": false } ],
-    "prefer-const": "off",
-    "semi": ["error", "always"],
-    "quotes": ["warn", "single"],
-    "space-before-function-paren": ["error", { "named": "never" }]
-  },
-  "ignorePatterns": ["node_modules"]
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2022": true
+	},
+	"extends": ["standard", "@speedingplanet/eslint-config"],
+	"rules": {
+		"indent": ["warn", "tab"],
+		"no-tabs": "off",
+		"no-unused-vars": ["warn"],
+		"no-var": "warn",
+		"no-void": ["off"],
+		"object-shorthand": ["warn", "properties"],
+		"prefer-const": "off",
+		"prefer-regex-literals": "off",
+		"semi": ["error", "always"],
+		"dot-location": "off",
+		"eol-last": "off",
+		"func-call-spacing": "off",
+		"generator-star-spacing": "off",
+		"key-spacing": "off",
+		"keyword-spacing": "off",
+		"lines-between-class-members": "off",
+		"multiline-ternary": "off",
+		"new-parens": "off",
+		"no-extra-parens": "off",
+		"no-floating-decimal": "off",
+		"no-mixed-operators": "off",
+		"no-mixed-spaces-and-tabs": "off",
+		"no-multi-spaces": "off",
+		"no-multiple-empty-lines": "off",
+		"no-trailing-spaces": "off",
+		"no-whitespace-before-property": "off",
+		"object-curly-newline": "off",
+		"object-curly-spacing": "off",
+		"object-property-newline": "off",
+		"operator-linebreak": "off",
+		"padded-blocks": "off",
+		"quote-props": "off",
+		"quotes": "off",
+		"rest-spread-spacing": "off",
+		"space-before-blocks": "off",
+		"space-before-function-paren": "off",
+		"space-in-parens": "off",
+		"space-infix-ops": "off",
+		"space-unary-ops": "off",
+		"spaced-comment": "off",
+		"template-curly-spacing": "off",
+		"template-tag-spacing": "off",
+		"wrap-iife": "off",
+		"yield-star-spacing": "off"
+	},
+	"ignorePatterns": ["node_modules", "dist", "generated"]
 }
