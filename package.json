@@ -1,8 +1,9 @@
 {
 	"name": "javascript-examples",
-	"version": "2.0.0",
+	"version": "3.0.0",
 	"description": "\"JavaScript examples for Speeding Planet classes\"",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint demos/**/*.js",
@@ -16,21 +17,16 @@
 		"url": "https://github.com/johnpaxton/javascript-examples/"
 	},
 	"devDependencies": {
-		"@speedingplanet/eslint-config": "^0.0.5",
+		"@speedingplanet/eslint-config": "^0.0.7",
 		"@testing-library/dom": "^9.0.0",
-		"chai": "^4.3.7",
-		"eslint": "^8.13.0",
-		"eslint-plugin-testing-library": "^6.0.0",
-		"global-jsdom": "^9.1.0",
+		"eslint": "^9.5.0",
+		"global-jsdom": "^24.0.0",
 		"http-server": "^14.1.0",
-		"jest": "^29.3.1",
-		"jsdom": "^22.0.0",
+		"jsdom": "^24.1.0",
 		"json-server": "^0.17.0",
-		"mocha": "^10.2.0",
 		"msw": "^2.0.0",
 		"nodemon": "^3.0.0",
-		"prettier": "^3.1.0",
-		"sinon": "^17.0.0"
+		"prettier": "^3.1.0"
 	},
 	"dependencies": {
 		"lodash": "^4.17.21",

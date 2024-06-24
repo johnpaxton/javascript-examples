@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars, import/first, import/no-duplicates */
-
+/* eslint-disable no-unused-vars */
 // Import one item; typical
 import { x } from './exports.js';
 console.log(x); // 10

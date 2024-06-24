@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-private-class-members */
 /* eslint-disable no-unused-vars */
 
 let x = 10;

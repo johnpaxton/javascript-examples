@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-private-class-members */
 class Car {
 	// Public members
 	make = '';
